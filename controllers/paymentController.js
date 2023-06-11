@@ -33,7 +33,7 @@ export const paymentVerification = async (req, res) => {
   if (isAuthenticate) {
     //database stuff
     await Payment.create({ razorpay_payment_id, razorpay_order_id, razorpay_signature });
-    res.redirect(`http://localhost:3000/paymentSuccessfull?reference=${razorpay_payment_id}`);
+    res.redirect(`https://6485f00d01d6012cd68be343--jade-figolla-dfb401.netlify.app/paymentSuccessfull?reference=${razorpay_payment_id}`);
   }
   else {
     res.status(200).json({
