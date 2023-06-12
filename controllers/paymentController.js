@@ -33,7 +33,8 @@ export const paymentVerification = async (req, res) => {
   if (isAuthenticate) {
     //database stuff
     await Payment.create({ razorpay_payment_id, razorpay_order_id, razorpay_signature });
-    res.redirect(`https://razor-pay-xnjt.vercel.app/paymentSuccessfull?reference=${razorpay_payment_id}`);
+    res.redirect(`https://razor-frontend.vercel.app/paymentSuccessfull?reference=${razorpay_payment_id}`);
+    // res.redirect(`http://localhost:3000/paymentSuccessfull?reference=${razorpay_payment_id}`);
   }
   else {
     res.status(200).json({
